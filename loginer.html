@@ -1,0 +1,18 @@
+<input type="text" id="nev">
+<input type="password" id="pswd">
+
+<button onclick="loginer()">login</button>
+
+
+<script>
+    async function loginer() {
+        const felhnev = document.getElementById("nev").value;
+        const felhjelsz = document.getElementById("pswd").value;
+
+        const res = await fetch("http://localhost:3000/users");
+        const felhasznalok = await res.json();
+
+
+    }
+</script>
+}
