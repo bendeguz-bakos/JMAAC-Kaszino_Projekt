@@ -4,7 +4,7 @@ body {
     background-color: #f4f4f4;
 }
 
-header {
+.header {
     /*background-color: #6e0c0f;*/
     background-image: url(bordo_textura.avif);
     background-repeat: no-repeat;
@@ -13,6 +13,7 @@ header {
     color: white;
     padding: 20px;
     text-align: center;
+    
 }
 
 nav {
@@ -44,4 +45,9 @@ footer {
     color: white;
     text-align: center;
     padding: 15px;
+}
+
+.kep_meret{ 
+    width:300px;
+     height:200px;
 }
