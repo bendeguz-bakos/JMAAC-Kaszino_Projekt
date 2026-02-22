@@ -3,7 +3,7 @@
 
 <button onclick="loginer()">login</button>
 
-
+<a href="landingpage.html">AS</a>
 <script>
     async function loginer() {
         const felhnev = document.getElementById("nev").value;
@@ -12,6 +12,14 @@
         const res = await fetch("http://localhost:3000/users");
         const felhasznalok = await res.json();
 
+        const user = felhasznalok.find(u => u.username === felhnev && u.password === felhjelsz);
+
+        if (user) {
+            localStorage.setItem("currentUserId", user.id)
+            alert("sikeres bejelentkezes")
+        } else {
+            alert("Hibás felhasználónév vagy jelszó!");
+        }
 
     }
 </script>
