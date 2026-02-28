@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Félkarú-rabló</title>
+</head>
+
+<body>
+    <input type="number" id="tet">
+    <button onclick="start()">Játék</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        async function start() {
+            const userid = localStorage.getItem("userid")
+            if (userid === null){
+                Swal.fire({
+                    title: 'Sajnos nincs elég fedezet a fiókodon',
+                    text: 'De feltölthetsz az alábbi gombal',
+                    icon: 'error',
+                    showCancelButton: true,
+                    cancelButtonText: "Majd Később",
+                    confirmButtonText: "Töltök fel pénzt"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = "topup.html";
+                    }
+                });
+            }
+            const tet = document.getElementById("tet").value
+            const v_fiok = await fetch(`http://localhost:3000/users/${userid}`)
+
+            if (tet > v_fiok.balance) {
+                Swal.fire({
+                    title: 'Sajnos nincs elég fedezet a fiókodon',
+                    text: 'De feltölthetsz az alábbi gombal',
+                    icon: 'error',
+                    showCancelButton: true,
+                    cancelButtonText: "Majd Később",
+                    confirmButtonText: "Töltök fel pénzt"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = "topup.html";
+                    }
+                });
+
+            } else {
+                Swal.fire({
+                    title: 'Hello',
+                    text: 'This works with just HTML, CSS, and JS.',
+                    icon: 'success'
+                })
+            }
+
+
+        }
+    </script>
+</body>
+
+</html>

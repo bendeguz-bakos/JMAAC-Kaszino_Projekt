@@ -3,15 +3,23 @@
 
 <button onclick="loginer()">login</button>
 
-
+<a href="topup.html">topUp</a>
 <script>
     async function loginer() {
-        const felhnev = document.getElementById("nev").value;
-        const felhjelsz = document.getElementById("pswd").value;
+        const felhnev = document.querySelector('#nev').value;
+        const felhjelsz = document.querySelector("#pswd").value;
 
-        const res = await fetch("http://localhost:3000/users");
-        const felhasznalok = await res.json();
+        const users = await fetch("http://localhost:3000/users");
+        const felhasznalok = await users.json();
 
+        const user = felhasznalok.find(u => u.username === felhnev && u.password === felhjelsz);
+
+        if (user) {
+            localStorage.setItem("userid", user.id)
+            alert("sikeres bejelentkezes")
+        } else {
+            alert("Hibás felhasználónév vagy jelszó!");
+        }
 
     }
 </script>
