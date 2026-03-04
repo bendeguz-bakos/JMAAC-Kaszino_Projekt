@@ -11,22 +11,26 @@
     <input type="number" id="tet">
     <button onclick="start()">Játék</button>
 
+    <div>
+        <span id="elso_kep"></span>
+        <span id="masodik_kep"></span>
+        <span id="hamradik_kep"></span>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
         async function start() {
             const userid = localStorage.getItem("userid")
-            if (userid === null){
+            if (userid === null) {
                 Swal.fire({
-                    title: 'Sajnos nincs elég fedezet a fiókodon',
-                    text: 'De feltölthetsz az alábbi gombal',
+                    title: 'Nem vagz bejelentkezve!',
+                    text: 'Jelentkezzbe itt',
                     icon: 'error',
-                    showCancelButton: true,
-                    cancelButtonText: "Majd Később",
-                    confirmButtonText: "Töltök fel pénzt"
+                    confirmButtonText: "Bejelentkezes"
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        window.location.href = "topup.html";
+                        window.location.href = "loginer.html";
                     }
                 });
             }
@@ -38,8 +42,6 @@
                     title: 'Sajnos nincs elég fedezet a fiókodon',
                     text: 'De feltölthetsz az alábbi gombal',
                     icon: 'error',
-                    showCancelButton: true,
-                    cancelButtonText: "Majd Később",
                     confirmButtonText: "Töltök fel pénzt"
                 }).then((result) => {
                     if (result.isConfirmed) {
@@ -48,11 +50,26 @@
                 });
 
             } else {
-                Swal.fire({
-                    title: 'Hello',
-                    text: 'This works with just HTML, CSS, and JS.',
-                    icon: 'success'
-                })
+                const emojis = ["🍒", "🍋", "🍊", "⭐", "💎", "7️⃣"];
+                const elso_ertek = Math.floor((Math.random() * 101))
+                const masodik_ertek = Math.floor((Math.random() * 101))
+                const harmadik_ertek = Math.floor((Math.random() * 101))
+                function szam_to_emoji(ertek) {
+                    if (ertek <= 30) return emojis[0];
+                    else if (ertek <= 55) return emojis[1];
+                    else if (ertek <= 75) return emojis[2];
+                    else if (ertek <= 90) return emojis[3];
+                    else if (ertek <= 97) return emojis[4];
+                    else return emojis[5]
+                }
+
+                const vegso = [szam_to_emoji(elso_ertek), szam_to_emoji(masodik_ertek), szam_to_emoji(harmadik_ertek)]
+                const szorzo
+
+
+
+
+
             }
 
 
