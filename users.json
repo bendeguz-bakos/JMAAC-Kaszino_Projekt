@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "bende",
+      "password": "1234",
+      "balance": 615
+    },
+    {
+      "id": "2",
+      "username": "anna",
+      "password": "abcd",
+      "balance": 0
+    },
+    {
+      "id": "0c35",
+      "username": {},
+      "password": {}
+    },
+    {
+      "id": "7f61",
+      "username": "debug",
+      "password": "debug"
+    },
+    {
+      "id": "43e6",
+      "username": "debug",
+      "password": "debug"
+    },
+    {
+      "id": "66ba",
+      "username": "bendeg",
+      "password": "asd"
+    },
+    {
+      "id": "f7c7",
+      "username": "asdasd",
+      "password": "asd"
+    },
+    {
+      "id": "7ffd",
+      "username": "asdasdqwe",
+      "password": "asd"
+    }
+  ]
+}
