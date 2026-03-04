@@ -50,23 +50,50 @@
                 });
 
             } else {
-                const emojis = ["🍒", "🍋", "🍊", "⭐", "💎", "7️⃣"];
+                const emojis = ["🍒", "🍋", "🍊", "🍇", "⭐", "💎", "7️⃣"];
                 const elso_ertek = Math.floor((Math.random() * 101))
                 const masodik_ertek = Math.floor((Math.random() * 101))
                 const harmadik_ertek = Math.floor((Math.random() * 101))
                 function szam_to_emoji(ertek) {
-                    if (ertek <= 30) return emojis[0];
-                    else if (ertek <= 55) return emojis[1];
-                    else if (ertek <= 75) return emojis[2];
-                    else if (ertek <= 90) return emojis[3];
-                    else if (ertek <= 97) return emojis[4];
-                    else return emojis[5]
+                    if (ertek <= 20) return emojis[0];
+                    else if (ertek <= 40) return emojis[1];
+                    else if (ertek <= 60) return emojis[2];
+                    else if (ertek <= 80) return emojis[3];
+                    else if (ertek <= 85) return emojis[4];
+                    else if (ertek <= 95) return emojis[5];
+                    else return emojis[6]
                 }
 
                 const vegso = [szam_to_emoji(elso_ertek), szam_to_emoji(masodik_ertek), szam_to_emoji(harmadik_ertek)]
-                const szorzo
+                function szorzo_szamlalo(sorozat) {
+                    if (sorozat[0] === sorozat[1] && sorozat[1] === sorozat[2]) {
+                        if (sorozat.includes("⭐") = true) {
+                            return 1.4
+                        } else if (sorozat.includes("💎") = true) {
+                            return 2
+                        } else if (sorozat.includes("7️⃣") = true) {
+                            return 3.5
+                        } else {
+                            return 1.15
+                        }
+                    }
+                    else if (sorozat.filter(e => e === "🍒").length === 2) {
+                        return 1
+                    } else if (sorozat.filter(e => e === "🍋").length === 2) {
+                        return 1
+                    } else if (sorozat.filter(e => e === "🍊").length === 2) {
+                        return 1
+                    } else if (sorozat.filter(e => e === "⭐").length === 2) {
+                        return 1.2
+                    } else if (sorozat.filter(e => e === "💎").length === 2) {
+                        return 1.5
+                    } else if (sorozat.filter(e => e === "7️⃣").length === 2) {
+                        return 2
+                    } else return 0
+                }
 
-
+                console.log(vegso)
+                console.log(szorzo_szamlalo(vegso))
 
 
 
